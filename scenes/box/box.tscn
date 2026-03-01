@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://blr7gsdbm215e"]
+
+[ext_resource type="Texture2D" uid="uid://ltoc681f1thu" path="res://assets/box.png" id="1_dry3k"]
+[ext_resource type="Script" uid="uid://bc3l0qmws8gay" path="res://scenes/box/box.gd" id="1_vf6jd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dry3k"]
+size = Vector2(8, 8)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dry3k"]
+
+[node name="Box" type="StaticBody2D" unique_id=354698184]
+collision_layer = 4
+script = ExtResource("1_vf6jd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=97911780]
+texture = ExtResource("1_dry3k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1582698714]
+shape = SubResource("RectangleShape2D_dry3k")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=751528033]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1372290537]
+shape = SubResource("CircleShape2D_dry3k")
