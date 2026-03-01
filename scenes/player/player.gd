@@ -16,4 +16,7 @@ func _physics_process(delta):
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
 	
+	look_at(get_global_mouse_position())
+	rotation += PI / 2
+	
 	move_and_slide()
