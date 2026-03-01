@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
 
-@export var max_speed := 150.0
-@export var acceleration := 800.0
-@export var friction := 800.0
+@export var max_speed := 60.0
+@export var acceleration := 600.0
+@export var friction := 300.0
 
 func _physics_process(delta):
 	var input_vector = Vector2(
