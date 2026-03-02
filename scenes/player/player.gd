@@ -4,7 +4,7 @@ extends CharacterBody2D
 var max_speed := 60.0
 var acceleration := 600.0
 var friction := 300.0
-var interact_target = null
+var interactable_object = null
 
 func _physics_process(delta):
 	var input_vector = Vector2(
@@ -21,6 +21,8 @@ func _physics_process(delta):
 	rotation += PI / 2
 	
 	move_and_slide()
-	
-	if Input.is_action_just_pressed("interact"):
-		print("E")
+
+
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("interact") and interactable_object:
+		interactable_object.interact()

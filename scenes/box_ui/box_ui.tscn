@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://crvlmxkt4cvkd"]
+
+[ext_resource type="Script" uid="uid://dc2w6rlyg7unw" path="res://scenes/box_ui/box_ui.gd" id="1_lxosx"]
+
+[node name="BoxUI" type="Control" unique_id=173534313]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lxosx")
+
+[node name="Label" type="Label" parent="." unique_id=920914723]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
