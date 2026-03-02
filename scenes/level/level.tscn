@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://dg2u25jcohfvc" path="res://scenes/player/player.tscn" id="2_nbgty"]
 [ext_resource type="Texture2D" uid="uid://0jc8vgnk5k57" path="res://assets/tiles.png" id="3_qkmgm"]
 [ext_resource type="PackedScene" uid="uid://blr7gsdbm215e" path="res://scenes/box/box.tscn" id="4_qkmgm"]
+[ext_resource type="Script" uid="uid://c1alqluukalge" path="res://scenes/level/canvas_layer.gd" id="5_hnne4"]
+[ext_resource type="PackedScene" uid="uid://fsmynsf5st54" path="res://scenes/ui_box/ui_box.tscn" id="6_vpf64"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hnne4"]
 texture = ExtResource("3_qkmgm")
@@ -39,8 +41,17 @@ tile_set = SubResource("TileSet_qkmgm")
 [node name="Box" parent="." unique_id=354698184 instance=ExtResource("4_qkmgm")]
 position = Vector2(84, 76)
 
+[node name="Box2" parent="." unique_id=435755162 instance=ExtResource("4_qkmgm")]
+position = Vector2(116, 108)
+
 [node name="Player" parent="." unique_id=2098680463 instance=ExtResource("2_nbgty")]
-position = Vector2(160, 96)
+position = Vector2(14, 26)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1564007383]
 zoom = Vector2(1.5, 1.5)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1909432974]
+script = ExtResource("5_hnne4")
+
+[node name="UIBox" parent="CanvasLayer" unique_id=680852978 instance=ExtResource("6_vpf64")]
+visible = false
