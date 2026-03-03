@@ -2,7 +2,6 @@ extends Control
 
 
 var ItemSlotScene: PackedScene = preload("res://scenes/item_slot/item_slot.tscn")
-var revealed = false
 
 
 func _ready() -> void:
@@ -24,7 +23,9 @@ func build(box_items, box_opened) -> void:
 
 
 func reveal_item(item: Control, index: int) -> void:
-	await get_tree().create_timer(index * 1).timeout
+	var pause_before_reveal := 1
+	await get_tree().create_timer(index * pause_before_reveal).timeout
 	
 	var tween = create_tween()
-	tween.tween_property(item, "modulate", Color(1, 1, 1, 1), 1)
+	var animation_time := 0.2
+	tween.tween_property(item, "modulate", Color(1, 1, 1, 1), animation_time)

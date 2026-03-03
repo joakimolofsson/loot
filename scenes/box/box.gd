@@ -83,7 +83,7 @@ func add_items_to_box() -> void:
 		{"name": "Mana Potion", "icon": get_icon(2, 2)}
 	]
 	
-	for i in rng.randi_range(1, 4):
+	for i in rng.randi_range(1, 5):
 		items_in_box.append(items.pick_random())
 	
 	# Kopia av array, shuffle items, tar dom 3 första, inga duplicates
