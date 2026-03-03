@@ -5,6 +5,7 @@ var max_speed := 60.0
 var acceleration := 600.0
 var friction := 300.0
 var interactable_object = null
+@onready var animated_sprite = $AnimatedSprite2D
 
 
 func _physics_process(delta):
@@ -17,6 +18,14 @@ func _physics_process(delta):
 		velocity = velocity.move_toward(input_vector * max_speed, acceleration * delta)
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
+	
+	var is_moving = velocity.length() > 1
+	if is_moving:
+		if animated_sprite.animation != "walk":
+			animated_sprite.play("walk")
+	else:
+		if animated_sprite.animation != "default":
+			animated_sprite.play("default")
 	
 	look_at(get_global_mouse_position())
 	rotation += PI / 2
