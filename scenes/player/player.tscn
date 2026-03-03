@@ -1,7 +1,55 @@
 [gd_scene format=3 uid="uid://dg2u25jcohfvc"]
 
-[ext_resource type="Texture2D" uid="uid://bx8ow5mx3gf4f" path="res://assets/player.png" id="1_8afob"]
+[ext_resource type="Texture2D" uid="uid://bx83b4ot3xpal" path="res://assets/player.png" id="1_8afob"]
 [ext_resource type="Script" uid="uid://dk1pk0063sgwp" path="res://scenes/player/player.gd" id="1_dovo2"]
+[ext_resource type="Texture2D" uid="uid://crcl1ippl74ls" path="res://assets/player_walk/player_walk_0.png" id="3_h17s1"]
+[ext_resource type="Texture2D" uid="uid://m5fbofxc0l6p" path="res://assets/player_walk/player_walk_1.png" id="4_je7p5"]
+[ext_resource type="Texture2D" uid="uid://bt3nt7glkphyn" path="res://assets/player_walk/player_walk_2.png" id="5_fm80t"]
+[ext_resource type="Texture2D" uid="uid://cunrvn1ffn6ym" path="res://assets/player_walk/player_walk_3.png" id="6_gx1jg"]
+[ext_resource type="Texture2D" uid="uid://by7tx2gk4mulw" path="res://assets/player_walk/player_walk_4.png" id="7_ugbui"]
+[ext_resource type="Texture2D" uid="uid://cyarho63oclci" path="res://assets/player_walk/player_walk_5.png" id="8_fcs02"]
+[ext_resource type="Texture2D" uid="uid://csum3squw6jnc" path="res://assets/player_walk/player_walk_6.png" id="9_myrg7"]
+[ext_resource type="Texture2D" uid="uid://d2h6c735075n4" path="res://assets/player_walk/player_walk_7.png" id="10_kvlxm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uf5tr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8afob")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_h17s1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_je7p5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fm80t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gx1jg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ugbui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fcs02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_myrg7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_kvlxm")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 12.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dovo2"]
 radius = 3.5
@@ -10,8 +58,9 @@ radius = 3.5
 collision_mask = 6
 script = ExtResource("1_dovo2")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=310782242]
-texture = ExtResource("1_8afob")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=583081683]
+sprite_frames = SubResource("SpriteFrames_uf5tr")
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1042435815]
 shape = SubResource("CircleShape2D_dovo2")

@@ -6,6 +6,7 @@ var acceleration := 600.0
 var friction := 300.0
 var interactable_object = null
 
+
 func _physics_process(delta):
 	var input_vector = Vector2(
 		Input.get_action_strength("walk_right") - Input.get_action_strength("walk_left"),
@@ -23,6 +24,6 @@ func _physics_process(delta):
 	move_and_slide()
 
 
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("interact") and interactable_object:
 		interactable_object.interact()

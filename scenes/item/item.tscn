@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://d24swtcpech6u"]
+
+[ext_resource type="Script" uid="uid://v4oqmwn44liu" path="res://scenes/item/item.gd" id="1_vcqat"]
+
+[node name="Item" type="TextureRect" unique_id=1713888222]
+offset_right = 40.0
+offset_bottom = 40.0
+stretch_mode = 2
+script = ExtResource("1_vcqat")

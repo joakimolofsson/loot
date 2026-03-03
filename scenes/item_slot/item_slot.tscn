@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://hvsk8p6j5hbi"]
+
+[ext_resource type="Script" uid="uid://dhl8ia7jw4pye" path="res://scenes/item_slot/item_slot.gd" id="1_7iywk"]
+[ext_resource type="Texture2D" uid="uid://cnes6l6wb275i" path="res://assets/box_item_slot.png" id="1_oeqa3"]
+
+[node name="ItemSlot" type="Control" unique_id=1241489691]
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_7iywk")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1631301198]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_oeqa3")
+stretch_mode = 2
+
+[node name="ItemContainer" type="Control" parent="." unique_id=333440732]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="ItemContainer" unique_id=492934853]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
