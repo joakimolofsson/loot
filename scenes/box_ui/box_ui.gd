@@ -9,7 +9,7 @@ func _ready() -> void:
 
 
 func build(box_items, box_opened) -> void:
-	for i in 6:
+	for i in range(6):
 		var item_slot = ItemSlotScene.instantiate()
 		$MarginContainer/GridContainer.add_child(item_slot)
 		
@@ -19,10 +19,10 @@ func build(box_items, box_opened) -> void:
 			if not box_opened:
 				var item_in_slot = item_slot.get_node("ItemContainer/CenterContainer").get_child(0)
 				item_in_slot.modulate = Color(0.0, 0.0, 0.0, 1.0)
-				reveal_item(item_in_slot, i)
+				reveal_item_animation(item_in_slot, i)
 
 
-func reveal_item(item: Control, index: int) -> void:
+func reveal_item_animation(item: Control, index: int) -> void:
 	var pause_before_reveal := 1
 	await get_tree().create_timer(index * pause_before_reveal).timeout
 	
