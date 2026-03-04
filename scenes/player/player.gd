@@ -1,10 +1,11 @@
 extends CharacterBody2D
 
 
-var max_speed := 60.0
+var max_speed := 50.0
 var acceleration := 600.0
 var friction := 300.0
 var interactable_object = null
+var items_in_backpack = []
 @onready var animated_sprite = $AnimatedSprite2D
 
 
@@ -36,3 +37,10 @@ func _physics_process(delta):
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("interact") and interactable_object:
 		interactable_object.interact()
+
+
+func add_item(item):
+	items_in_backpack.append(item)
+
+func remove_item(item):
+	items_in_backpack.erase(item)

@@ -11,7 +11,7 @@ func _ready() -> void:
 	var all_the_spawn_tiles = spawn_tiles.get_used_cells()
 	all_the_spawn_tiles.shuffle()
 	
-	var amount_of_boxes := 10
+	var amount_of_boxes := 12
 	var spawn_positions = all_the_spawn_tiles.slice(0, amount_of_boxes)
 	
 	for i in spawn_positions.size():
